@@ -1,0 +1,28 @@
+{
+	"manifest_version": 2,
+	"name":"daisenryakuWeb",
+	"short_name":"YMDW",
+	"version":"0.0.0.3",
+	"description":"Movage大戦略Web画面修正",
+	"icons":{"128":"128.png","48":"48.png","16":"16.png"},
+	"page_action":{
+		"default_title":"YM大戦略Web",
+		"default_icon":{"32":"32.png"}
+		},
+	"content_scripts":[
+		{
+			"matches":["http://yahoo-mbga.jp/game/12006124/play"],
+			"js":["jquery.js","mainF.js"]
+			},
+		{
+			"matches":["http://acd72834b1f8068dfc78e1b9403f9320865dccce.app.mbga-platform.jp/gadgets/*"],
+			"js":["jquery.js","subF.js"],
+			"all_frames":true
+			}					
+		],
+	"background":{
+		"scripts":["back.js"],
+		"persistent": false
+	}
+
+}
