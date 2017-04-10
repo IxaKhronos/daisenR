@@ -21,8 +21,8 @@
 			}					
 		],
 	"background":{
-		"scripts":["back.js"],
+		"scripts":["jquery.js","back.js"],
 		"persistent": false
-	}
-
+	},
+	"permissions":["debugger"] 
 }
