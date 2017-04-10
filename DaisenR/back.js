@@ -40,7 +40,7 @@ function fcb(req,res){
 	rs=$(res.body);
 	console.log(req.url)
 	console.log(req.post)
-	console.log(rs.find(":eq(1)")[0].tagName)
+//	console.log(rs.find(":eq(1)")[0].tagName)
 	console.log(rs[2])
 //	console.log(getCV(rs.find("result")))
 	delete req;
