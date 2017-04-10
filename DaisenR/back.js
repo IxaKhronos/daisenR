@@ -37,15 +37,10 @@ chrome.debugger.onEvent.addListener(function(src,method,params){
 })
 
 function fcb(req,res){
-	rs=$(res.body);
-	console.log(req.url)
-	console.log(req.post)
-//	console.log(rs.find(":eq(1)")[0].tagName)
-	console.log(rs[2])
-//	console.log(getCV(rs.find("result")))
-	delete req;
-}
 
-function getCV(src){
-	return src[0].firstChild.nodeValue.replace("[CDATA[","").replace("]]","")
+	console.log(req.url)
+	console.log(decodeURIComponent(req.post))
+	rs=$($.parseXML(res.body));
+	console.log(rs[0])
+	delete req;
 }

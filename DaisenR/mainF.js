@@ -9,5 +9,7 @@ function pageOn(){
 	$("#ymbga_app").css("margin","0")
 	$("#game_play_side_tabs").css("display","none")
 	$("#ymbga_app").attr("height","640")
+	$("#ymbga_app").height("640px")
+	$("#search_main").css("display","none")
 	$("#secound-footer-sec").css("display","none");
 }
