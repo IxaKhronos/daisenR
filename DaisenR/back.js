@@ -6,7 +6,21 @@ chrome.runtime.onMessage.addListener(function(mes,sender){
 var debugee;
 function startNetCheck(id){
 	debugee={tabId:id}
-	chrome.debugger.attach(debugee, "1.2", onAttach.bind(null, id));
+	var flg=false;
+	chrome.debugger.getTargets(function(res){
+		for(var k in res){
+			if(res[k].url=="http://yahoo-mbga.jp/game/12006124/play"){
+				if(res[k].attached){
+					onAttach(id)
+				}else{
+					chrome.debugger.attach(debugee, "1.2", onAttach.bind(null, id));
+				}
+				break;
+			}
+		}
+	})
+/*	
+	*/
 }
 function onAttach(tabId) {
 	if (chrome.runtime.lastError) {
